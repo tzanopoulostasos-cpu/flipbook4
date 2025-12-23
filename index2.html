@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="el">
+<head>
+<meta charset="UTF-8">
+<title>Flipbook Demo</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<!-- jQuery -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+
+<!-- Turn.js -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/turn.js/4.1.0/turn.min.js"></script>
+
+<style>
+body {
+  margin: 0;
+  background: #f4f1ec;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  font-family: Arial, sans-serif;
+}
+
+#flipbook {
+  width: 800px;
+  height: 500px;
+}
+
+.page {
+  background: white;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 26px;
+  font-weight: bold;
+  text-align: center;
+  padding: 30px;
+}
+</style>
+</head>
+
+<body>
+
+<div id="flipbook">
+  <div class="page">Σελίδα 1<br><small>Εισαγωγή</small></div>
+  <div class="page">Σελίδα 2<br><small>Ανάπτυξη</small></div>
+  <div class="page">Σελίδα 3<br><small>Συμπέρασμα</small></div>
+  <div class="page">Τέλος</div>
+</div>
+
+<script>
+$(document).ready(function () {
+  $('#flipbook').turn({
+    width: 800,
+    height: 500,
+    autoCenter: true
+  });
+});
+</script>
+
+</body>
+</html>
