@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="el">
+<head>
+<meta charset="UTF-8">
+<title>Flipbook Demo – Physics</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<!-- StPageFlip -->
+<script src="https://unpkg.com/page-flip/dist/js/page-flip.browser.js"></script>
+
+<style>
+body {
+  margin: 0;
+  background: #f4f1ec;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  font-family: "Segoe UI", Arial, sans-serif;
+}
+
+#book {
+  width: 900px;
+  height: 600px;
+}
+
+.page {
+  background: white;
+  padding: 40px;
+  box-sizing: border-box;
+  font-size: 26px;
+  font-weight: 600;
+  line-height: 1.4;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  box-shadow: inset 0 0 0 1px #ddd;
+}
+
+.page small {
+  display: block;
+  margin-top: 20px;
+  font-size: 14px;
+  font-weight: normal;
+  color: #555;
+}
+</style>
+</head>
+
+<body>
+
+<div id="book">
+  <div class="page">
+    Η παγκοσμιότητα της ακτινοβολίας<br>του μαύρου σώματος
+    <small>Σελίδα 1</small>
+  </div>
+
+  <div class="page">
+    Η εκπεμπόμενη ακτινοβολία εξαρτάται<br>μόνο από τη θερμοκρασία
+    <small>Σελίδα 2</small>
+  </div>
+
+  <div class="page">
+    Το πρόβλημα αυτό οδήγησε<br>στη γέννηση της Κβαντικής Φυσικής
+    <small>Σελίδα 3</small>
+  </div>
+
+  <div class="page">
+    Τέλος Δείγματος
+  </div>
+</div>
+
+<script>
+const pageFlip = new St.PageFlip(
+  document.getElementById("book"),
+  {
+    width: 900,
+    height: 600,
+    size: "stretch",
+    maxShadowOpacity: 0.4,
+    showCover: true,
+    mobileScrollSupport: false
+  }
+);
+
+pageFlip.loadFromHTML(document.querySelectorAll(".page"));
+</script>
+
+</body>
+</html>
